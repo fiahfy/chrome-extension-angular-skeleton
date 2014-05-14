@@ -7,7 +7,7 @@ Getting Started
 ---------
 
     $ git clone https://github.com/fiahfy/chrome-extension-angular-skeleton.git
-
+    $ cd chrome-extension-angular-skeleton
     $ npm install
 
 Test
@@ -24,4 +24,4 @@ Run build task.
 
     $ grunt build
 
-Archive `dist' directory, and publish it.
+Archive `dist` directory, and publish it.
