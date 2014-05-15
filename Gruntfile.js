@@ -22,11 +22,11 @@ module.exports = function (grunt) {
     },
 
     watch: {
-      js: {
+      all: {
         files: ['app/js/**.js'],
         tasks: ['newer:jshint:all']
       },
-      jsTest: {
+      test: {
         files: ['test/unit/**.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
@@ -40,10 +40,7 @@ module.exports = function (grunt) {
         jshintrc: '.jshintrc',
         reporter: require('jshint-stylish')
       },
-      all: [
-        'Gruntfile.js',
-        'app/js/**.js'
-      ],
+      all: ['app/js/**.js'],
       test: {
         options: {
           jshintrc: 'test/.jshintrc'
@@ -62,7 +59,7 @@ module.exports = function (grunt) {
     clean: {
       dist: {
         src: [
-          '.tmp', 'dist'
+          '.tmp', 'dist', 'dist.zip'
         ]
       }
     },
@@ -74,13 +71,7 @@ module.exports = function (grunt) {
           cwd: 'app',
           dest: 'dist',
           src: [
-            '*',
-            'data/**',
-            'html/**',
-            'img/**',
-            'js/{analytics,content_scripts}.js',
-            'libs/**',
-            'partials/**'
+            '**'
           ]
         }]
       }
@@ -124,6 +115,12 @@ module.exports = function (grunt) {
       }
     },
 
+    shell: {
+      archive: {
+        command: 'zip -r dist.zip dist'
+      }
+    }
+
 //    autoprefixer: {
 //      options: {
 //        browsers: ['last 1 version']
@@ -152,8 +149,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('init', [
-    'clean',
-    'bower'
+    'bower:install'
   ]);
 
   grunt.registerTask('test', [
@@ -162,7 +158,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean',
-    'bower',
     'useminPrepare',
     'copy',
     'concat',
@@ -172,7 +167,8 @@ module.exports = function (grunt) {
     'uglify',
 //    'rev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'shell:archive'
   ]);
 
   grunt.registerTask('default', [

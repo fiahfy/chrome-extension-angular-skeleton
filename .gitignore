@@ -1,8 +1,9 @@
 !.gitkeep
 .idea
 .DS_Store
+.tmp/
 node_modules/
 bower_components/
 app/libs/
 dist/
-.tmp/
+dist.zip
