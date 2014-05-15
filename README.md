@@ -8,8 +8,10 @@ Getting Started
 
 ###Clone project
 
-    git clone https://github.com/fiahfy/chrome-extension-angular-skeleton.git
-    cd chrome-extension-angular-skeleton
+```
+git clone https://github.com/fiahfy/chrome-extension-angular-skeleton.git
+cd chrome-extension-angular-skeleton
+```
 
 ###Install node modules
 
@@ -18,27 +20,34 @@ Getting Started
 Develop
 ---------
 
-Run watch task.
+Add `app` directory to Chrome.  
+Run `watch` task.
 
-    grunt watch
+```
+grunt watch
+```
 
 Lint changed files with JSHint, and Test with Karma.
 
 Test
 ---------
 
-Run test task.
+Run `test` task.
 
-    grunt test
+```
+grunt test
+```
 
 Test with Karma according to the specs.
 
 Build & Release Production
 ---------
 
-Run build task.
+Run `build` task.
 
-    grunt build
+```
+grunt build
+```
 
 Created `dist` and archived `dist.zip`.  
 Submit `dist.zip` to Chrome Web Store.
