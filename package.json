@@ -1,10 +1,19 @@
 {
   "name": "chrome-extension-angular-skeleton",
   "version": "0.0.0",
-  "license": "MIT",
+  "author": {
+    "name": "fiahfy"
+  },
+  "homepage": "https://github.com/fiahfy/chrome-extension-angular-skeleton",
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
   "devDependencies": {
     "grunt": "~0.4.4",
     "grunt-autoprefixer": "^0.7.3",
+    "grunt-banner": "^0.2.2",
     "grunt-bower-task": "~0.3.4",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-concat": "~0.4.0",
