@@ -4,8 +4,11 @@
 
 var controllers = angular.module('controllers', []);
 
-controllers.controller('PopupMainCtrl', ['$scope', function($scope){
+controllers.controller('PopupMainCtrl', ['$scope', 'CounterService', function($scope, CounterService){
 	$scope.message = 'This is my popup!';
-	// save message
-	chrome.storage.local.set({'message': $scope.message});
+	
+	CounterService.increment(function(count){
+		$scope.count = count;
+		$scope.$apply();
+	});
 }]);
