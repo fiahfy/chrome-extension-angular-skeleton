@@ -3,8 +3,8 @@
 /* App Module */
 
 var app = angular.module('app', [
-	'controllers',
-	'directives',
-	'filters',
-	'services'
+  'controllers',
+  'directives',
+  'filters',
+  'services'
 ]);
